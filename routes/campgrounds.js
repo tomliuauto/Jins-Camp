@@ -5,6 +5,18 @@ var Comment = require("../models/comment");
 var middleware = require("../middleware");
 var geocoder = require("geocoder");
 
+//index- show all campgrounds
+router.get("/", function(req, res){
+    // Get all campgrounds from DB
+    Campground.find({}, function(err, allCampgrounds){
+       if(err){
+           console.log(err);
+       } else {
+          res.render("campgrounds/index",{campgrounds:allCampgrounds});
+       }
+    });
+});
+
 
 
 //CREATE - add new campground to DB
