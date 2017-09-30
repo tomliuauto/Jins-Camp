@@ -18,8 +18,8 @@ var commentRoutes    = require("./routes/comments"),
 
 console.log(process.env.DATABASEURL);
 
-mongoose.connect("mongodb://localhost/texas_camp");
-// mongoose.connect("mongodb://admin:admin@ds117830.mlab.com:17830/texascamp");
+// mongoose.connect("mongodb://localhost/texas_camp");
+mongoose.connect("mongodb://admin:admin@ds117830.mlab.com:17830/texascamp");
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs");
